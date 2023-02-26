@@ -41,15 +41,15 @@ Route::name('backend.')->middleware('auth')->group(function(){
         Route::get('/create', [ACMController::class, 'create'])->name('create');
         Route::post('/store', [ACMController::class, 'store'])->name('store');
         Route::get('/edit/{id}', [ACMController::class, 'edit'])->name('edit');
-        Route::post('/update/{id}', [ACMController::class, 'update'])->name('update');
+        Route::put('/update/{id}', [ACMController::class, 'update'])->name('update');
         Route::get('/destroy/{id}', [ACMController::class, 'delete'])->name('destroy');
     });
     Route::prefix('product')->name('product.')->group(function(){
         Route::get('/', [ProductController::class,'index'])->name('index');
         Route::get('/create', [ProductController::class,'create'])->name('create');
-        Route::get('/store', [ProductController::class,'store'])->name('store');
+        Route::post('/store', [ProductController::class,'store'])->name('store');
         Route::get('/edit/{id}', [ProductController::class,'edit'])->name('edit');
-        Route::get('/update/{id}', [ProductController::class,'update'])->name('update');
+        Route::put('/update/{id}', [ProductController::class,'update'])->name('update');
         Route::get('/destroy/{id}', [ProductController::class,'destroy'])->name('destroy');
     });
 
