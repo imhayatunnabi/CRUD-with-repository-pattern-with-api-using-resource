@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Repositories\ProductRepository;
 use Illuminate\Support\Facades\Storage;
 
@@ -26,7 +27,7 @@ class ProductController extends Controller
         return view('backend.pages.product.create');
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $data = $request->all();
         $image = null;
@@ -51,7 +52,7 @@ class ProductController extends Controller
         return view('backend.pages.product.edit', compact('product'));
     }
 
-    public function update(Request $request, int $id)
+    public function update(ProductRequest $request, int $id)
     {
         $data = $request->all();
         $product = $this->productRepository->find($id);
