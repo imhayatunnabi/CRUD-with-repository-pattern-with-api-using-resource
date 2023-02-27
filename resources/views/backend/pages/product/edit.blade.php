@@ -6,7 +6,7 @@
         @method('put')
         <div class="mb-3">
             <label for="" class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Enter product name">
+            <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Enter product name" value="{{ $product['name'] }}">
             <p class="form-text text-danger mt-3">
                 @error('name')
                 {{ $message }}
@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Desc</label>
-            <input type="text" class="form-control" name="desc" id="" aria-describedby="helpId" placeholder="Enter product desc">
+            <input type="text" class="form-control" name="desc" id="" aria-describedby="helpId" placeholder="Enter product desc" value="{{ $product['desc'] }}">
             <p class="form-text text-danger mt-3">
                 @error('desc')
                 {{ $message }}
@@ -24,7 +24,7 @@
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Quantity</label>
-            <input type="text" class="form-control" name="quantity" id="" aria-describedby="helpId" placeholder="Enter product quantity">
+            <input type="number" class="form-control" name="quantity" id="" aria-describedby="helpId" placeholder="Enter product quantity" value="{{ $product['quantity'] }}">
             <p class="form-text text-danger mt-3">
                 @error('quantity')
                 {{ $message }}
@@ -33,7 +33,7 @@
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Price</label>
-            <input type="text" class="form-control" name="price" id="" aria-describedby="helpId" placeholder="Enter product price">
+            <input type="number" class="form-control" name="price" id="" aria-describedby="helpId" placeholder="Enter product price" value="{{ $product['price'] }}">
             <p class="form-text text-danger mt-3">
                 @error('price')
                 {{ $message }}

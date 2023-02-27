@@ -15,13 +15,15 @@
         <tbody>
             @foreach ($products as $item)
             <tr class="">
-                <td scope="row">{{ $item->id }}</td>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->quantity }}</td>
-                <td>{{ $item->price }}</td>
+                <td scope="row">{{ $item['id'] }}</td>
                 <td>
-                    <a href="{{ route('backend.product.edit',$item->id) }}" class="btn btn-success">Edit</a>
-                    <a href="{{ route('backend.product.delete',$item->id) }}" class="btn btn-danger">Delete</a>
+                    <img width="50px" src="{{ $item['image'] }}" alt="{{ $item['name'] }}">{{ $item['name'] }}
+                </td>
+                <td>{{ $item['quantity'] }}</td>
+                <td>{{ $item['price'] }}</td>
+                <td>
+                    <a href="{{ route('backend.product.edit',$item['id']) }}" class="btn btn-success">Edit</a>
+                    <a href="{{ route('backend.product.destroy',$item['id']) }}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach

@@ -18,13 +18,26 @@ class EloquentProductRepository implements ProductRepository
 
     public function create(array $data): Product
     {
-        return Product::create($data);
+        // dd($data);
+        return Product::create([
+            'name'=>$data['name'],
+            'desc'=>$data['desc'],
+            'price'=>$data['price'],
+            'quantity'=>$data['quantity'],
+            'image'=>$data['image'],
+        ]);
     }
 
     public function update(int $id, array $data): Product
     {
         $product = Product::find($id);
-        $product->update($data);
+        $product->update([
+            'name'=>$data['name'],
+            'desc'=>$data['desc'],
+            'price'=>$data['price'],
+            'quantity'=>$data['quantity'],
+            'image'=>$data['image'],
+        ]);
         return $product;
     }
 
